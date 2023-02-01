@@ -1,9 +1,12 @@
-import rive from "@rive-app/canvas";
 
-new rive.Rive({
-    src: "https://cdn.rive.app/animations/vehicles.riv",
-    // Or the path to a local Rive asset
-    // src: './example.riv',
-    canvas: document.getElementById("canvas"),
-    autoplay: true
+function riveObject() {
+    return new rive.Rive({
+        src: 'src/assets/exports/ball_1.riv',
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+    })
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    riveObject();
 });
