@@ -7,20 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="public/favicon.ico">
     <link rel="stylesheet" href="src/styles/main.css">
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.98"></script>
+    <script src="src/scripts/index.js"></script>
     <title>Bouncing ball</title>
 </head>
 
 <body>
     <div class="view">
         <div class="main-container">
-            <div class="ball-content" id="div">
-                <canvas id="canvas" width="500" height="500"></canvas>
+            <div class="balls-container">
+                <div class="green-ball">
+                    <canvas id="ball-0" width="800" height="530"></canvas>
+                </div>
+                <div class="purple-ball">
+                    <canvas id="ball-1" width="800" height="500"></canvas>
+                </div>
+                <div class="blue-ball">
+                    <canvas id="ball-2" width="600" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="aside-container">
+            <div class="info-container">
+                <div class="title-container">
+                    <h2 class="title">Bouncing balls</h2>
+                </div>
+                <div class="stars-icon">
+                    <canvas id="stars" width="550" height="200"></canvas>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <div class="button-content">
+                    <div class="all-buttons" id="btn-green">
+                        <span class="button-texts">Green</span>
+                    </div>
+                    <div class="like-icon">
+                        <canvas id="heart-green" width="300" height="200"></canvas>
+                    </div>
+                </div>
+
+                <div class="button-content">
+                    <div class="all-buttons" id="btn-purple">
+                        <span class="button-texts">Purple</span>
+                    </div>
+                    <div class="like-icon">
+                        <canvas id="heart-purple" width="300" height="200"></canvas>
+                    </div>
+                </div>
+
+                <div class="button-content">
+                    <div class="all-buttons" id="btn-blue">
+                        <span class="button-texts">Blue</span>
+                    </div>
+                    <div class="like-icon">
+                        <canvas id="heart-blue" width="300" height="200"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    <script src="https://unpkg.com/@rive-app/canvas"></script>
-    <script src="src/scripts/index.js"></script>
+
 </body>
 
 </html>

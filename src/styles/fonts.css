@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'old-west';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets/fonts/old-west.otf');
+}
+
+@font-face {
+    font-family: 'new-west';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets/fonts/new-west.ttf') ;
+}
+
+@font-face {
+    font-family: 'wild-west';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets/fonts/wild-west.otf') ;
+}
