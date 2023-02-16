@@ -11,7 +11,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--grey-soft);
+  background: url('../assets/images/bg-west.jpg') no-repeat;
+  background-size: cover;
+  background-position-y: -177px;
 }
 
 .main-container {
@@ -19,6 +21,7 @@
   min-width: 1000px;
   height: 555px;
   min-height: 555px;
+  margin: 3rem;
   background-color: var(--black);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: 4px solid var(--black);
@@ -31,15 +34,17 @@
   height: 100%;
   overflow: hidden;
   background: url('../assets/images/west.jpg') no-repeat;
-  background-size: contain;
+  background-position-x: -350px;
+  background-size: cover;
   position: relative;
 }
 
 .aside-container {
   width: max-content;
-  max-height: max-content;
-  height: 560px;
-  min-height: 560px;
+  min-width: max-content;
+  height: 563px;
+  min-height: 563px;
+  margin: 3rem 3rem 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -174,20 +179,20 @@
 /* ---------------------- Balls ---------------------- */
 .green-ball {
   position: absolute;
-  bottom: -10px;
+  bottom: 7px;
   right: 380px;
 }
 
 .purple-ball {
   position: absolute;
-  bottom: 28px;
-  right: 90px;
+  bottom: 50px;
+  right: 80px;
 }
 
 .blue-ball {
   position: absolute;
-  bottom: -17px;
-  left: 494px;
+  bottom: 15px;
+  left: 500px;
 }
 
 
