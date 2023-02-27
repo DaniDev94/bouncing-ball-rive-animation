@@ -7,7 +7,7 @@ function riveObjects() {
 
     const ball0Rive = new rive.Rive({
         src: 'src/assets/exports/ball_0.riv',
-        canvas: document.getElementById('ball-0'),
+        canvas: document.getElementById('ball-0-green'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
@@ -31,7 +31,7 @@ function riveObjects() {
 
     const ball1Rive = new rive.Rive({
         src: 'src/assets/exports/ball_1.riv',
-        canvas: document.getElementById('ball-1'),
+        canvas: document.getElementById('ball-1-purple'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
@@ -51,7 +51,7 @@ function riveObjects() {
 
     const ball2Rive = new rive.Rive({
         src: 'src/assets/exports/ball_2.riv',
-        canvas: document.getElementById('ball-2'),
+        canvas: document.getElementById('ball-2-blue'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {

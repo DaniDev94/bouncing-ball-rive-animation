@@ -4,24 +4,41 @@
 @import 'fonts.css';
 
 
-/* ---------------------- Containers & contents ---------------------- */
-.view {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background: url('../assets/images/bg-west.jpg') no-repeat;
-  background-size: cover;
-  background-position-y: -177px;
+/* ---------------------- View ---------------------- */
+@viewport {
+  width: 1024px;
 }
 
+body {
+  margin: 0 auto;
+  background: url('../assets/images/bg-west.jpg') no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.view {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.view>* {
+  margin: auto;
+}
+
+.view-content {
+  display: inline-flex;
+}
+
+
+/* ---------------------- Main ---------------------- */
 .main-container {
   width: 1000px;
   min-width: 1000px;
   height: 555px;
   min-height: 555px;
-  margin: 3rem;
+  margin: 3rem 1.5rem 3rem 3rem;
   background-color: var(--black);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: 4px solid var(--black);
@@ -29,7 +46,7 @@
   overflow: hidden;
 }
 
-.balls-container {
+.balls {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -39,19 +56,39 @@
   position: relative;
 }
 
+.ball-green {
+  position: absolute;
+  bottom: 7px;
+  right: 380px;
+}
+
+.ball-purple {
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+}
+
+.ball-blue {
+  position: absolute;
+  bottom: 15px;
+  left: 500px;
+}
+
+
+/* ---------------------- Aside ---------------------- */
 .aside-container {
   width: max-content;
   min-width: max-content;
   height: 563px;
   min-height: 563px;
-  margin: 3rem 3rem 3rem 1rem;
+  margin: 3rem 3rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.info-container {
+.aside-header {
   width: 370px;
   min-width: 370px;
   height: 200px;
@@ -71,28 +108,7 @@
   position: relative;
 }
 
-.buttons-container {
-  width: 370px;
-  min-width: 370px;
-  height: 300px;
-  min-height: 300px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 10px;
-  background: url('../assets/images/planks.jpg');
-  background-size: cover;
-  background-position-y: 14px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  border: 4px solid var(--black);
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-}
-
-.title-container {
+.title {
   width: 300px;
   height: 107px;
   position: relative;
@@ -100,12 +116,24 @@
   top: 0px;
 }
 
-.button-content {
-  margin-left: 30px;
-  position: relative;
+.title-text {
+  font-family: 'old-west';
+  color: var(--brown);
+  text-shadow: 2px 0 var(--black), -2px 0 var(--black), 0 2px var(--black), 0 -2px var(--black),
+    1px 1px var(--black), -1px -1px var(--black), 1px -1px var(--black), -1px 1px var(--black);
+  font-size: 43px;
+  letter-spacing: 7px;
+  margin: 12px 0 0 0;
+  user-select: none;
 }
 
-.popup-container {
+.stars-icon {
+  position: absolute;
+  top: 50px;
+  left: -99px;
+}
+
+.popup {
   width: 300px;
   height: 100px;
   padding: 10px;
@@ -149,7 +177,6 @@
   }
 }
 
-
 .close-popup-container {
   -webkit-animation: close-popup-container 1s ease-out both;
   animation: close-popup-container 1s ease-out both;
@@ -175,29 +202,43 @@
   }
 }
 
-
-/* ---------------------- Balls ---------------------- */
-.green-ball {
-  position: absolute;
-  bottom: 7px;
-  right: 380px;
+.popup-text {
+  font-family: 'wild-west';
+  color: var(--grey-soft);
+  text-shadow: 1px 0 var(--black), -1px 0 var(--black), 0 1px var(--black), 0 -1px var(--black),
+    1px 1px var(--black), -1px -1px var(--black), 1px -1px var(--black), -1px 1px var(--black);
+  font-size: 19px;
+  letter-spacing: 1px;
+  user-select: none;
 }
 
-.purple-ball {
-  position: absolute;
-  bottom: 50px;
-  right: 80px;
+.aside-buttons {
+  width: 370px;
+  min-width: 370px;
+  height: 300px;
+  min-height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 10px;
+  background: url('../assets/images/planks.jpg');
+  background-size: cover;
+  background-position-y: 14px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border: 4px solid var(--black);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
 }
 
-.blue-ball {
-  position: absolute;
-  bottom: 15px;
-  left: 500px;
+.button-content {
+  margin-left: 30px;
+  position: relative;
 }
 
-
-/* ---------------------- Buttons ---------------------- */
-.all-buttons {
+.button {
   width: 150px;
   height: 50px;
   background-color: var(--black-blur);
@@ -212,13 +253,13 @@
   z-index: 1;
 }
 
-.all-buttons:hover {
+.button:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 19px, rgba(0, 0, 0, 0.39) 0px 6px 6px;
   border-color: var(--grey-soft);
   transform: scale(1.1);
 }
 
-.all-buttons:active {
+.button:active {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transform: scale(1);
 }
@@ -247,33 +288,6 @@
   border-color: var(--blue);
 }
 
-
-/* ---------------------- Interactive buttons ---------------------- */
-.stars-icon {
-  position: absolute;
-  top: 50px;
-  left: -99px;
-}
-
-.nut-icon {
-  position: absolute;
-  bottom: -72px;
-  left: 153px;
-}
-
-
-/* ---------------------- Texts ---------------------- */
-.title {
-  font-family: 'old-west';
-  color: var(--brown);
-  text-shadow: 2px 0 var(--black), -2px 0 var(--black), 0 2px var(--black), 0 -2px var(--black),
-    1px 1px var(--black), -1px -1px var(--black), 1px -1px var(--black), -1px 1px var(--black);
-  font-size: 43px;
-  letter-spacing: 7px;
-  margin: 12px 0 0 0;
-  user-select: none;
-}
-
 .button-texts {
   font-family: 'old-west';
   color: var(--grey-soft);
@@ -284,14 +298,10 @@
   user-select: none;
 }
 
-.popoup-text {
-  font-family: 'wild-west';
-  color: var(--grey-soft);
-  text-shadow: 1px 0 var(--black), -1px 0 var(--black), 0 1px var(--black), 0 -1px var(--black),
-    1px 1px var(--black), -1px -1px var(--black), 1px -1px var(--black), -1px 1px var(--black);
-  font-size: 19px;
-  letter-spacing: 1px;
-  user-select: none;
+.nut-icon {
+  position: absolute;
+  bottom: -72px;
+  left: 153px;
 }
 
 
