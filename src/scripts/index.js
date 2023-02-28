@@ -76,7 +76,7 @@ function riveObjects() {
         onStateChange: (event) => {
             if (event.data.includes('5_stars')) {
                 popup.className += ' show-popup-container';
-                setTimeout(() => { stars.stop() }, 1000);
+                setTimeout(stars.pause(), 1000);
                 setTimeout(() => {
                     popup.className += ' close-popup-container';
                 }, 4000);
