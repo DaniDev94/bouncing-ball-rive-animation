@@ -4,7 +4,7 @@ const path = require('path');
 
 // Variables
 const app = express();
-const PORT = 80800;
+const PORT = 8080;
 
 // Server configuration
 app.use('/public', express.static(path.join(__dirname, 'public')));
