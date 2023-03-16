@@ -12,7 +12,7 @@ Compiles and auto-reloads for development
 npm dev
 ```
 
-compiles and no auto-reloads for production
+Compiles and no auto-reloads for production
 
 ```
 npm start
