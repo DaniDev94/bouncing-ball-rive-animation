@@ -9,25 +9,27 @@ function riveObjects() {
         src: 'src/assets/exports/ball_0.riv',
         canvas: document.getElementById('ball-0-green'),
         autoplay: true,
+        animations: 'Squash-Stretch',
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
-            ball0Rive.play('Squash-Stretch')
             btnGreen.onclick = () => {
                 if (ball0Rive.playingAnimationNames.includes('Squash-Stretch')) {
-                    ball0Rive.play('Final')
                     ball0Rive.stop('Squash-Stretch')
+                    ball0Rive.play('Final')
                 } else if (ball0Rive.playingAnimationNames.includes('Final')) {
-                    ball0Rive.play('Ease In Ease Out')
                     ball0Rive.stop('Final')
+                    ball0Rive.play('Ease In Ease Out')
                 } else if (ball0Rive.playingAnimationNames.includes('Ease In Ease Out')) {
-                    ball0Rive.play('Linear')
                     ball0Rive.stop('Ease In Ease Out')
+                    ball0Rive.play('Linear')
                 } else {
+                    ball0Rive.stop('Linear')
                     ball0Rive.play('Squash-Stretch')
                 }
             }
         }
     })
+
 
     const ball1Rive = new rive.Rive({
         src: 'src/assets/exports/ball_1.riv',
@@ -37,12 +39,13 @@ function riveObjects() {
         onLoad: () => {
             btnPurple.onclick = () => {
                 if (ball1Rive.playingAnimationNames.includes('Squash - Strech')) {
-                    ball1Rive.play('Ease in -  Ease out')
                     ball1Rive.stop('Squash - Strech')
+                    ball1Rive.play('Ease in -  Ease out')
                 } else if (ball1Rive.playingAnimationNames.includes('Ease in -  Ease out')) {
-                    ball1Rive.play('linear ')
                     ball1Rive.stop('Ease in -  Ease out')
+                    ball1Rive.play('linear ')
                 } else {
+                    ball1Rive.stop('linear ')
                     ball1Rive.play('Squash - Strech')
                 }
             }
@@ -56,7 +59,8 @@ function riveObjects() {
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
             btnBlue.onclick = () => {
-                ball2Rive.isActive === true ? ball2Rive.pause('Linear') : ball2Rive.play('Linear');
+                ball2Rive.isPlaying ? ball2Rive.pause('Linear') : ball2Rive.play('Linear');
+                // [Created property (isActive)]: ball2Rive.isActive === true ? ball2Rive.pause('Linear') : ball2Rive.play('Linear');
             }
         },
         onPlay: () => {
