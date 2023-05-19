@@ -1,0 +1,52 @@
+/* ---------------------- Imports ---------------------- */
+@import 'normalize.css';
+@import 'colors.css';
+@import 'fonts.css';
+
+
+/* ---------------------- View ---------------------- */
+@viewport {
+  width: 1024px;
+}
+
+body {
+  margin: 0 auto;
+  background: url('../assets/images/bg-west.jpg') no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.view {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.view>* {
+  margin: auto;
+}
+
+.view-content {
+  display: inline-flex;
+}
+
+
+/* ---------------------- Main ---------------------- */
+.main-container {
+  width: 1000px;
+  min-width: 1000px;
+  height: 555px;
+  min-height: 555px;
+  margin: 3rem 1.5rem 3rem 3rem;
+  background-color: var(--black);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border: 4px solid var(--black);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ---------------------- Higher specification ---------------------- */
+.pointer {
+  cursor: pointer !important;
+}

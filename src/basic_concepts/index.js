@@ -3,10 +3,28 @@ function riveObjects() {
     const btnPurple = document.getElementById('btn-purple');
     const btnBlue = document.getElementById('btn-blue');
     const popup = document.getElementById('popup');
+    const $loadingContainer = document.getElementById('loading-container');
+    const $allContent = document.getElementById('view');
 
+    const loading = new rive.Rive({
+        src: 'exports/loading.riv',
+        canvas: document.getElementById('loading'),
+        autoplay: true,
+        layout: new rive.Layout({ fit: 'cover' }),
+        onLoad: () => {
+            loading.play();
+            loading.resizeDrawingSurfaceToCanvas();
+            setTimeout(() => {
+                $allContent.classList.remove("opacity-0");
+                $loadingContainer.className = "disabled";
+                loading.pause();
+            }, 1800);
+
+        },
+    });
 
     const ball0Rive = new rive.Rive({
-        src: 'src/assets/exports/ball_0.riv',
+        src: 'src/basic_concepts/assets/exports/ball_0.riv',
         canvas: document.getElementById('ball-0-green'),
         autoplay: true,
         animations: 'Squash-Stretch',
@@ -32,7 +50,7 @@ function riveObjects() {
 
 
     const ball1Rive = new rive.Rive({
-        src: 'src/assets/exports/ball_1.riv',
+        src: 'src/basic_concepts/assets/exports/ball_1.riv',
         canvas: document.getElementById('ball-1-purple'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
@@ -53,7 +71,7 @@ function riveObjects() {
     })
 
     const ball2Rive = new rive.Rive({
-        src: 'src/assets/exports/ball_2.riv',
+        src: 'src/basic_concepts/assets/exports/ball_2.riv',
         canvas: document.getElementById('ball-2-blue'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
@@ -72,7 +90,7 @@ function riveObjects() {
     })
 
     const stars = new rive.Rive({
-        src: 'src/assets/exports/stars.riv',
+        src: 'src/basic_concepts/assets/exports/stars.riv',
         canvas: document.getElementById('stars'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover' }),
@@ -80,7 +98,7 @@ function riveObjects() {
         onStateChange: (event) => {
             if (event.data.includes('5_stars')) {
                 popup.className += ' show-popup-container';
-                setTimeout(() => { stars.pause() }, 1000);
+                setTimeout(() => { stars.pause() }, 500);
                 setTimeout(() => {
                     popup.className += ' close-popup-container';
                 }, 4000);
@@ -89,7 +107,7 @@ function riveObjects() {
     })
 
     const nutGreen = new rive.Rive({
-        src: 'src/assets/exports/nut.riv',
+        src: 'src/basic_concepts/assets/exports/nut.riv',
         canvas: document.getElementById('nut-green'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
@@ -105,7 +123,7 @@ function riveObjects() {
     })
 
     const nutPurple = new rive.Rive({
-        src: 'src/assets/exports/nut.riv',
+        src: 'src/basic_concepts/assets/exports/nut.riv',
         canvas: document.getElementById('nut-purple'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
@@ -121,7 +139,7 @@ function riveObjects() {
     })
 
     const nutBlue = new rive.Rive({
-        src: 'src/assets/exports/nut.riv',
+        src: 'src/basic_concepts/assets/exports/nut.riv',
         canvas: document.getElementById('nut-blue'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
