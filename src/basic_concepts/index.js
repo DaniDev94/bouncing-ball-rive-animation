@@ -1,10 +1,11 @@
 function riveObjects() {
-    const btnGreen = document.getElementById('btn-green');
-    const btnPurple = document.getElementById('btn-purple');
-    const btnBlue = document.getElementById('btn-blue');
-    const popup = document.getElementById('popup');
     const $loadingContainer = document.getElementById('loading-container');
     const $allContent = document.getElementById('view');
+    const $btnArrowBack = document.getElementById('arrow-back');
+    const $btnGreen = document.getElementById('btn-green');
+    const $btnPurple = document.getElementById('btn-purple');
+    const $btnBlue = document.getElementById('btn-blue');
+    const $popup = document.getElementById('popup');
 
     const loading = new rive.Rive({
         src: 'exports/loading.riv',
@@ -23,6 +24,37 @@ function riveObjects() {
         },
     });
 
+    const arrowBack = new rive.Rive({
+        src: 'exports/arrow-back.riv',
+        canvas: $btnArrowBack,
+        autoplay: true,
+        stateMachines: 'Morph',
+        layout: new rive.Layout({ fit: rive.Fit.Fill }),
+        onLoad: () => {
+            arrowBack.resizeDrawingSurfaceToCanvas();
+            const inputs = arrowBack.stateMachineInputs('Morph');
+            const toArrowTrigger = inputs.find(input => input.name === 'ToArrow');
+            const toMenuTrigger = inputs.find(input => input.name === 'ToMenu');
+            $btnArrowBack.onmouseenter = () => toArrowTrigger.fire();
+            $btnArrowBack.onmouseout = () => toMenuTrigger.fire();
+        },
+        onStateChange: (event) => {
+            if (event.data[0].includes('AsArrow')) {
+                $btnArrowBack.classList.remove('idle');
+                $btnArrowBack.classList.add('active');
+                if ($btnArrowBack.classList.value == 'active') {
+                    $btnArrowBack.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        window.location.assign(location.origin + '/');
+                    })
+                }
+            } else if (event.data[0].includes('ToMenu')) {
+                $btnArrowBack.classList.remove('active');
+                $btnArrowBack.classList.add('idle');
+            }
+        }
+    });
+
     const ball0Rive = new rive.Rive({
         src: 'src/basic_concepts/assets/exports/ball_0.riv',
         canvas: document.getElementById('ball-0-green'),
@@ -30,7 +62,7 @@ function riveObjects() {
         animations: 'Squash-Stretch',
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
-            btnGreen.onclick = () => {
+            $btnGreen.onclick = () => {
                 if (ball0Rive.playingAnimationNames.includes('Squash-Stretch')) {
                     ball0Rive.stop('Squash-Stretch')
                     ball0Rive.play('Final')
@@ -48,14 +80,13 @@ function riveObjects() {
         }
     })
 
-
     const ball1Rive = new rive.Rive({
         src: 'src/basic_concepts/assets/exports/ball_1.riv',
         canvas: document.getElementById('ball-1-purple'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
-            btnPurple.onclick = () => {
+            $btnPurple.onclick = () => {
                 if (ball1Rive.playingAnimationNames.includes('Squash - Strech')) {
                     ball1Rive.stop('Squash - Strech')
                     ball1Rive.play('Ease in -  Ease out')
@@ -76,8 +107,8 @@ function riveObjects() {
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
-            btnBlue.onclick = () => {
-                ball2Rive.isPlaying ? ball2Rive.pause('Linear') : ball2Rive.play('Linear');
+            $btnBlue.onclick = () => {
+                ball2Rive.isPlaying ? ball2Rive.pause('Squash-Stretch') : ball2Rive.play('Squash-Stretch');
                 // [Created property (isActive)]: ball2Rive.isActive === true ? ball2Rive.pause('Linear') : ball2Rive.play('Linear');
             }
         },
@@ -97,10 +128,10 @@ function riveObjects() {
         stateMachines: 'State Machine 1',
         onStateChange: (event) => {
             if (event.data.includes('5_stars')) {
-                popup.className += ' show-popup-container';
+                $popup.className += ' show-popup-container';
                 setTimeout(() => { stars.pause() }, 500);
                 setTimeout(() => {
-                    popup.className += ' close-popup-container';
+                    $popup.className += ' close-popup-container';
                 }, 4000);
             }
         }
@@ -112,10 +143,10 @@ function riveObjects() {
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
-            btnGreen.onmouseenter = () => {
+            $btnGreen.onmouseenter = () => {
                 nutGreen.play('hover');
             }
-            btnGreen.onmouseleave = () => {
+            $btnGreen.onmouseleave = () => {
                 nutGreen.pause('hover');
                 nutGreen.play('idle');
             }
@@ -128,10 +159,10 @@ function riveObjects() {
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
-            btnPurple.onmouseenter = () => {
+            $btnPurple.onmouseenter = () => {
                 nutPurple.play('hover');
             }
-            btnPurple.onmouseleave = () => {
+            $btnPurple.onmouseleave = () => {
                 nutPurple.pause('hover');
                 nutPurple.play('idle');
             }
@@ -144,10 +175,10 @@ function riveObjects() {
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
         onLoad: () => {
-            btnBlue.onmouseenter = () => {
+            $btnBlue.onmouseenter = () => {
                 nutBlue.play('hover');
             }
-            btnBlue.onmouseleave = () => {
+            $btnBlue.onmouseleave = () => {
                 nutBlue.pause('hover');
                 nutBlue.play('idle');
             }
