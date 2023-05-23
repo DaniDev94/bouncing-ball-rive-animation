@@ -207,9 +207,28 @@ function riveObjects() {
     });
 }
 
+function disableExternalButtons() {
+    const $btnForDisable = document.querySelectorAll('.btn-for-disable');
+    const $popUp = document.getElementById('pop-up');
+    const $ballBtns = document.getElementById('ball-btns');
+    $btnForDisable[0].onclick = () => {
+        console.log('estoy!!')
+        $popUp.classList.remove('disabled');
+        $ballBtns.classList.add('disabled');
+        if ($ballBtns.className.includes('disabled')) {
+            console.log($btnForDisable[0])
+            for (let i = 0; i <= 1; i++) {
+                $btnForDisable[i].classList.add('disabled')
+                
+            }
+        }
+    }
+}
+
 
 function init() {
     riveObjects();
+    disableExternalButtons();
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {

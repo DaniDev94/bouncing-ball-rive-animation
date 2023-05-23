@@ -34,6 +34,7 @@ function riveObjects() {
     })
 }
 
+
 function init() {
     riveObjects();
 }

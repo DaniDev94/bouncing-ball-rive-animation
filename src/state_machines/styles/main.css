@@ -95,7 +95,9 @@
 
 .emoji-content {
   width: 600px;
+  min-width: 600px;
   height: 350px;
+  min-width: 350px;
   display: flex;
   justify-content: center;
   background-color: var(--black);
@@ -213,8 +215,10 @@
 
 /* ------- Ball ------- */
 .ball-container {
-  width: 800px;
+  width: 820px;
+  min-width: 820px;
   height: 620px;
+  min-height: 620px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -222,18 +226,62 @@
   align-items: center;
 }
 
-.ball-content {
-  width: 800px;
-  height: 500px;
-  margin: 0 auto;
+.ball-content{
+  width: 100%;
+  height: 508px;
   background-color: var(--black);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: 4px solid var(--black);
   border-radius: 30px;
+  box-sizing: border-box;
   overflow: hidden;
+  position: relative;
 }
 
-.ball-btns-content {
+.btn-for-disable {
+  width: 72px;
+  height: 72px;
+  border-radius: 11px;
+  position: absolute;
+  top: 5px;
+  left: 97px;
+}
+
+.btn-for-disable--2 {
+  left: 10px;
+}
+
+.ball-btns-content{
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball-buttons-pop-up {
+  width: 750px;
+  height: 50px;
+  background-color: var(--grey-soft);
+  border: 3px solid var(--black);
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 10px, rgba(0, 0, 0, 0.27) 0px 4px 6px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop-up-txt {
+  font-family: 'game';
+  font-size: 26px;
+  margin: 0 0 4px 0;
+  color: var(--black);
+  text-shadow: 0px 2px 4px var(--black-blur);
+  user-select: none;
+  text-align: center;
+}
+
+.ball-btns-container{
   width: 100%;
   height: 110px;
   display: flex;
@@ -241,7 +289,7 @@
   align-items: center;
 }
 
-.ball-button {
+.ball-buttons {
   width: 85px;
   height: 85px;
   cursor: pointer;
