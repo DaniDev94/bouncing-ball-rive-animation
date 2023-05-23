@@ -7,16 +7,52 @@
     <meta name="viewport" content="width=1024, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="public/favicon/machines.ico">
     <link rel="stylesheet" href="src/state_machines/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://unpkg.com/@rive-app/canvas@1.0.98/rive.js"></script>
     <script src="src/state_machines/index.js"></script>
     <title>Bouncing ball</title>
 </head>
 
 <body>
-    <div class="view">
-        <div class="view-content">
-            <div class="main-container">
-                <h1>Maquinas de estado</h1>
+    <div id="loading-container">
+        <canvas id="loading"></canvas>
+    </div>
+    <div id="view" class="view opacity-0">
+        <div class="view-container">
+            <div class="header-container">
+                <div class="arrow-back-container">
+                    <canvas id="arrow-back"></canvas>
+                </div>
+            </div>
+            <div class="machines-container">
+                <div class="emoji-container">
+                    <h1 class="title">State machine lab</h1>
+                    <div class="emoji-content">
+                        <canvas id="emoji"></canvas>
+                        <p class="emoji-text">Change the color... which one do you think it prefers?</p>
+                    </div>
+                    <div class="emoji-btns-content">
+                        <div class="emoji-button" id="btn-yellow">
+                            <p class="emoji-btn-txt">Yellow</p>
+                        </div>
+                        <div class="emoji-button" id="btn-violet">
+                            <p class="emoji-btn-txt">violet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ball-container">
+                    <div class="ball-content">
+                        <canvas id="ball"></canvas>
+                    </div>
+                    <div class="ball-btns-content">
+                        <div class="ball-button" id="ball-button-left">
+                            <canvas id="btn-left"></canvas>
+                        </div>
+                        <div class="ball-button" id="ball-button-right">
+                            <canvas id="btn-right"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

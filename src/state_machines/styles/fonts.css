@@ -1,20 +1,13 @@
-/* @font-face {
-    font-family: 'old-west';
+@font-face {
+    font-family: 'starjedi';
     font-style: normal;
     font-weight: normal;
-    src: url('../assets/fonts/old-west.otf');
+    src: url('../assets/fonts/starjedi.ttf');
 }
 
 @font-face {
-    font-family: 'new-west';
+    font-family: 'game';
     font-style: normal;
     font-weight: normal;
-    src: url('../assets/fonts/new-west.ttf') ;
+    src: url('../assets/fonts/ancient-game.ttf');
 }
-
-@font-face {
-    font-family: 'wild-west';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../assets/fonts/wild-west.otf') ;
-} */
