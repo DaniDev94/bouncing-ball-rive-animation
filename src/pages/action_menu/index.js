@@ -3,7 +3,7 @@ function riveObjects() {
     const $allContent = document.getElementById('view');
 
     const loading = new rive.Rive({
-        src: 'exports/loading.riv',
+        src: 'src/utils/exports/loading.riv',
         canvas: document.getElementById('loading'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover' }),
@@ -20,7 +20,7 @@ function riveObjects() {
     });
 
     const bgNight = new rive.Rive({
-        src: 'src/action_menu/assets/exports/bg-night.riv',
+        src: 'src/pages/action_menu/assets/exports/bg-night.riv',
         canvas: document.getElementById('bg-night'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover' }),

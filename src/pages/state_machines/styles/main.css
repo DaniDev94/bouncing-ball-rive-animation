@@ -1,5 +1,5 @@
 /* ---------------------- Imports ---------------------- */
-@import '/styles/normalize.css';
+@import '/src/utils/styles/normalize.css';
 @import 'colors.css';
 @import 'fonts.css';
 

@@ -8,7 +8,7 @@ function riveObjects() {
     const $btnRight = document.getElementById('ball-button-right');
 
     const loading = new rive.Rive({
-        src: 'exports/loading.riv',
+        src: 'src/utils/exports/loading.riv',
         canvas: document.getElementById('loading'),
         autoplay: true,
         layout: new rive.Layout({ fit: 'cover' }),
@@ -25,7 +25,7 @@ function riveObjects() {
     });
 
     const arrowBack = new rive.Rive({
-        src: 'exports/arrow-back.riv',
+        src: 'src/utils/exports/arrow-back.riv',
         canvas: $btnArrowBack,
         autoplay: true,
         stateMachines: 'Morph',
@@ -56,7 +56,7 @@ function riveObjects() {
     });
 
     const emoji = new rive.Rive({
-        src: 'src/state_machines/assets/exports/emoji.riv',
+        src: 'src/pages/state_machines/assets/exports/emoji.riv',
         canvas: document.getElementById('emoji'),
         autoplay: true,
         stateMachines: 'BasicosStateMachine',
@@ -91,7 +91,7 @@ function riveObjects() {
     });
 
     const ball = new rive.Rive({
-        src: 'src/state_machines/assets/exports/ball-state-machine.riv',
+        src: 'src/pages/state_machines/assets/exports/ball-state-machine.riv',
         canvas: document.getElementById('ball'),
         autoplay: true,
         layout: new rive.Layout({ fit: rive.Fit.Fill }),
@@ -102,7 +102,7 @@ function riveObjects() {
     });
 
     const ballButtonLeft = new rive.Rive({
-        src: 'src/state_machines/assets/exports/btn-ball.riv',
+        src: 'src/pages/state_machines/assets/exports/btn-ball.riv',
         canvas: document.getElementById('btn-left'),
         autoplay: false,
         layout: new rive.Layout({ fit: rive.Fit.Fill }),
@@ -137,6 +137,7 @@ function riveObjects() {
                 if (nivelNumber.value < 3) {
                     $btnRight.classList.remove('disalble-btn');
                     $btnRight.classList.add('enable-btn');
+                    ballButtonRight.play('Normal');
                 }
             }
         },
@@ -155,7 +156,7 @@ function riveObjects() {
     });
 
     const ballButtonRight = new rive.Rive({
-        src: 'src/state_machines/assets/exports/btn-ball.riv',
+        src: 'src/pages/state_machines/assets/exports/btn-ball.riv',
         canvas: document.getElementById('btn-right'),
         autoplay: false,
         layout: new rive.Layout({ fit: rive.Fit.Fill }),
@@ -183,6 +184,7 @@ function riveObjects() {
                 if (nivelNumber.value > 0) {
                     $btnLeft.classList.remove('disalble-btn');
                     $btnLeft.classList.add('enable-btn')
+                    ballButtonLeft.play('Normal');
                 }
                 if (nivelNumber.value === 3) {
                     $btnRight.classList.remove('enable-btn');
