@@ -24,7 +24,7 @@ First test with Rive (the new standard for interactive graphics) in which the wo
 
 ## Development
 
-All the integration has been done with Vanilla.js, HTML5 and CSS.
+All the integration has been done with Vanilla.js, HTML5, CSS and Node.js
 
 ## Important
 
